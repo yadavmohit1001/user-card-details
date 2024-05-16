@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+    <title>User Card Details</title>
+    <!-- <link rel="stylesheet"
+        href="style.css" /> -->
+    <style>
+        #main_container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            place-items: center;
+            /* border: 2px solid gray; */
+            padding: 10px;
+        }
+
+        .card_container img {
+            width: 350px;
+            height: 350px;
+        }
+
+        .card_container button {
+            padding: 7px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            width: 60%;
+            color: white;
+            background-color: rgb(180, 197, 106);
+            transition: all ease-in-out 0.3s;
+        }
+
+        .card_container {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            border-radius: 10px 40px;
+            background-color: rgba(12, 8, 214, 0.144);
+        }
+
+        .card_container:hover {
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+
+
+        @media screen and (min-width:768px) and (max-width:1080px) {
+            #main_container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width:200px) and (max-width:767px) {
+            #main_container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main_container"></div>
+    <script>
+        let arr = [
+            {
+                image: "https://cdn.shopify.com/s/files/1/0553/0419/2034/files/5_WDG_LP_CH_1.jpg?v=1714736081",
+                h3: "BACK RESTS PILLOW",
+                p: "Shop Pillows",
+            },
+            {
+                image:
+                    "https://cdn.shopify.com/s/files/1/0553/0419/2034/files/Backpain.webp?v=1704281951&width=2048",
+                h3: "BACK PAIN",
+                p: "Shop Backrests",
+            },
+            {
+                image: "https://cdn.shopify.com/s/files/1/0553/0419/2034/files/footpain.webp?v=1704281898&width=2048",
+                h3: "FOOT PAIN",
+                p: "Shop Insoles",
+            },
+            {
+                image: "https://cdn.shopify.com/s/files/1/0553/0419/2034/files/Neckpain.webp?v=1704281951&width=2048",
+                h3: "NECK PAIN",
+                p: "Shop Pillows For Neck",
+            },
+            {
+                image: "https://cdn.shopify.com/s/files/1/0553/0419/2034/files/Tailbonepain.webp?v=1704281951&width=2048",
+                h3: "Tail Bone Pain",
+                p: "Shop Seat Cushions",
+            },
+            {
+                image: "https://myfrido.com/cdn/shop/files/UPSC_UPPCCombocopy_1_-min.jpg?v=1710389110&width=2048",
+                h3: "Frido Ultimate Pro Seating Combo",
+                p: "Shop For It",
+            },
+            {
+                image: "https://myfrido.com/cdn/shop/files/BlackCNP-1.jpg?v=1702318423&width=2048",
+                h3: "Frido Ultimate Car Neck Rest Pillow",
+                p: "Shop For It",
+            },
+            {
+                image: "https://myfrido.com/cdn/shop/files/01_pillow_686e6607-7158-49c5-b911-b939b1982344.webp?v=1715459799&width=2048",
+                h3: "Ultimate Deep Sleep Pillow",
+                p: "Shop For It",
+            },
+        ];
+
+        let main_container = document.getElementById("main_container");
+        function getData () {
+            arr.forEach((user) => {
+                let div = document.createElement("div");
+                div.classList.add("card_container");
+                let img = document.createElement("img");
+                img.src = user.image;
+                let h3 = document.createElement("h3");
+                h3.innerText = user.h3;
+                let p = document.createElement("p");
+                p.innerText = user.p;
+                let btn = document.createElement("button");
+                btn.innerText = "Add to Cart";
+                div.append(img, h3, btn);
+                main_container.append(div);
+            });
+        }
+
+        getData();
+    </script>
+</body>
+
+</html>
